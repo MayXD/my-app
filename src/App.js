@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Background from './assets/bg.jpg'
+import Wallet from './components/Wallet'
+import Logo from './components/Logo'
+import Claim from './components/Claim'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+console.log(Background);
+
+var sectionStyle = {
+  height: "100%",
+  width: "100%",
+  backgroundImage: `url(${Background})`,
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+};
+
+
+class App extends React.Component {
+  render() {
+    return (
+      <div className="USM" style={sectionStyle}>
+        <Wallet></Wallet>
+        <Logo></Logo>
+        <Claim></Claim>
+      </div>
+    )
+  }
 }
 
 export default App;
